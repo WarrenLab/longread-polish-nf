@@ -2,7 +2,6 @@
 
 params.reference = 'unpolished.fa'
 params.reads = 'long_reads/*.fastq.gz'
-params.numChunks = 100
 
 reference = file(params.reference)
 Channel.fromPath(params.reads)

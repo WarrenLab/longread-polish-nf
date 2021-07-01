@@ -4,8 +4,8 @@ Nextflow pipeline for polishing an assembly with long reads and racon
 ## Introduction
 Polishing a genome assembly with racon is pretty simple, except that it can take
 a while on large genomes and so you might want to distribute the tasks into
-multiple jobs on a cluster or the cloud. This pipeline does that distribution
-for you.
+one job per contig/scaffold/chromosome on a cluster. This pipeline does that
+distribution for you.
 
 ## Requirements
 ### Data
