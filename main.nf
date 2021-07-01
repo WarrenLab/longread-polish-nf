@@ -84,8 +84,14 @@ process racon {
     samtools view -bh all.bam $ctg > contig.bam
     samtools view -h contig.bam > contig.sam
     samtools fastq contig.bam > contig.fastq
-    racon -t ${task.cpus} contig.fastq contig.sam contig.fa \
-        > ${ctg}_corrected.fa
+
+    # only run racon if there are reads to run it on; otherwise it will crash
+    if [ -s contig.fastq ]; then
+        racon -t ${task.cpus} contig.fastq contig.sam contig.fa \
+            > ${ctg}_corrected.fa
+    else
+        cp contig.fa ${ctg}_corrected.fa
+    fi
     """
 }
 
