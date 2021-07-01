@@ -20,6 +20,7 @@ for you.
 * [racon](https://github.com/lbcb-sci/racon)
 * [minimap2](https://github.com/lh3/minimap2)
 * [samtools](http://www.htslib.org/)
+
 This pipeline is set up to use mamba to create an environment with these three
 programs in it, but you can always install them yourself or use modules. See
 configuration section below.
