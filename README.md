@@ -53,10 +53,13 @@ To download the pipeline and run it on your assembly, just run the command:
 ```
 nextflow run WarrenLab/longread-polish-nf \
     --reference unpolished_assembly.fa \
-    --reads long_reads/*.fastq.gz
+    --reads 'long_reads/*.fastq.gz'
 ```
 This will align all the reads to your reference and then use the alignments to
 correct the assembly.
+
+N.B. The single quotes around the `--reads` parameter are necessary to keep
+bash from expanding the asterisk; we want nextflow to do that expansion.
 
 ## TODO
 * Write help message
