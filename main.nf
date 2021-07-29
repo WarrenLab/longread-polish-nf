@@ -95,7 +95,7 @@ process racon {
 }
 
 process catContigs {
-    publishDir 'out'
+    publishDir 'out', mode: "copy"
 
     input:
     file "*_corrected.fa" from corrected.collect()
